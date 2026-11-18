@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=5">
+  <link rel="stylesheet" href="css/styles.css?v=9">
 </head>
 <body class="home">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -61,10 +61,18 @@
     </section>
 
     <!-- ============ IN RESIDENCE ============ -->
-    <section class="residence" aria-label="Where Sundew is in residence">
-      <div class="wrap" data-stagger>
-        <p class="label">In residence at</p>
-        <p class="residence-name">Hotel Swexan, Dallas</p>
+    <section class="section feature feature--night" id="residence">
+      <div class="wrap intro-grid">
+        <figure class="intro-figure" data-reveal>
+          <img src="assets/photos/residence-pool.webp" alt="The rooftop pool at Hotel Swexan under a bright Dallas sky" width="768" height="1024" loading="lazy">
+        </figure>
+        <div class="intro-copy" data-stagger>
+          <p class="label">In residence at</p>
+          <h2>Hotel Swexan, Dallas</h2>
+          <p class="statement">Tanning, on call.</p>
+          <p>Sundew is the private airbrush tanning service for guests of Hotel Swexan: a custom tan delivered to the suite, at a preferred guest rate.</p>
+          <p>You forgot your tan. We brought it.</p>
+        </div>
       </div>
     </section>
 
@@ -74,7 +82,7 @@
         <p class="label">The idea</p>
         <p class="statement">A great house already keeps a florist, a tailor, and a car. Sundew is its sunless artist.</p>
         <p>Your guests arrive for the wedding weekend, the gala, the photograph that will be kept. They expect to look their best, and they expect not to leave the suite to do it.</p>
-        <p>Sundew comes to them: a custom airbrush tan, applied privately by one artist, with everything brought in and nothing left behind. The guest remembers the glow. The house is remembered for arranging it.</p>
+        <p>Sundew comes to them: a custom airbrush tan, applied privately in the suite, with everything brought in and nothing left behind. The guest remembers the glow. The house is remembered for arranging it.</p>
       </div>
     </section>
 
@@ -82,9 +90,9 @@
     <section class="story" aria-label="One guest, one evening">
       <div class="story-grid">
         <div class="story-media" aria-hidden="true">
-          <img class="is-active" src="assets/photos/portrait-detail.webp" alt="" width="1000" height="1500" loading="lazy">
-          <img src="assets/photos/portrait-wall.webp" alt="" width="1000" height="1500" loading="lazy">
-          <img src="assets/photos/society.webp" alt="" width="1000" height="1245" loading="lazy">
+          <img class="is-active" src="assets/photos/story-request.webp" alt="" width="768" height="1024" loading="lazy">
+          <video src="assets/photos/arrival.mp4" poster="assets/photos/arrival-poster.jpg" muted loop playsinline preload="none"></video>
+          <video src="assets/photos/tan.mp4" poster="assets/photos/tan-poster.jpg" muted loop playsinline preload="none"></video>
           <img src="assets/photos/bride-garden.webp" alt="" width="1000" height="1244" loading="lazy">
         </div>
         <div class="story-chapters">
@@ -126,7 +134,7 @@
 
         <article class="service">
           <figure class="service-figure" data-reveal>
-            <img src="assets/photos/portrait-wall.webp" alt="A Sundew client in a white strapless dress leaning against a limestone wall" width="1000" height="1500" loading="lazy">
+            <img src="assets/photos/program-residence.webp" alt="Sundew cards on a marble table at Hotel Swexan, reading: You forgot your tan. We brought it." width="1125" height="1500" loading="lazy">
           </figure>
           <div class="service-copy" data-stagger>
             <p class="label">Hotels &amp; private residences</p>
@@ -143,7 +151,7 @@
 
         <article class="service service--flip">
           <figure class="service-figure" data-reveal>
-            <img src="assets/photos/bridal.webp" alt="A bride in a silk gown and veil holding a white bouquet" width="1000" height="1245" loading="lazy">
+            <img src="assets/photos/bridal.webp?v=2" alt="A bride in a silk gown and veil holding a white bouquet" width="1206" height="1493" loading="lazy">
           </figure>
           <div class="service-copy" data-stagger>
             <p class="label">Planners, ateliers &amp; venues</p>
@@ -160,7 +168,7 @@
 
         <article class="service">
           <figure class="service-figure" data-reveal>
-            <img src="assets/photos/society.webp" alt="A Sundew client in white lace and a grey fedora seated on a blush velvet chair" width="1000" height="1245" loading="lazy">
+            <img src="assets/photos/program-suite.webp" alt="White slippers embroidered with the Sundew name, tied with green ribbon" width="1125" height="1500" loading="lazy">
           </figure>
           <div class="service-copy" data-stagger>
             <p class="label">Brands, clubs &amp; private events</p>
@@ -169,11 +177,44 @@
             <ul class="includes">
               <li>Client appreciation days and trunk shows</li>
               <li>Galas, retreats, and editorial shoots</li>
+              <li>Recently: the Tan Station at New York Swim Week</li>
               <li>Hosted by the house, by invitation</li>
             </ul>
             <a class="btn" href="#inquire">Inquire</a>
           </div>
         </article>
+      </div>
+    </section>
+
+    <!-- ============ THE CASE FOR THE HOUSE ============ -->
+    <section class="section case" id="case">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <p class="label">The case for the house</p>
+          <h2>A new service on your menu, with nothing to build</h2>
+        </div>
+        <ul class="case-list" data-stagger>
+          <li>
+            <p class="case-figure">No space</p>
+            <h3>The suite is the studio</h3>
+            <p>Sundew works in the guest's own room or a space you choose. No treatment room, no build-out, no plumbing.</p>
+          </li>
+          <li>
+            <p class="case-figure">No staff</p>
+            <h3>We bring the artist</h3>
+            <p>Nothing to hire, train, or schedule. Your team makes one call, and Sundew handles the appointment from there.</p>
+          </li>
+          <li>
+            <p class="case-figure">No outlay</p>
+            <h3>Nothing to buy or stock</h3>
+            <p>Equipment, solution, linens, and robes arrive with us and leave with us. A first season costs the house nothing.</p>
+          </li>
+          <li>
+            <p class="case-figure">Your terms</p>
+            <h3>Amenity or revenue</h3>
+            <p>Host it as a gift to your best guests, offer it at a preferred house rate, or add it to your menu. You decide how it is offered.</p>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -186,8 +227,8 @@
         </div>
         <ul class="standard-list" data-stagger>
           <li>
-            <h3>One artist</h3>
-            <p>Every guest is cared for by the same hands. Sundew accepts a limited number of houses so that never changes.</p>
+            <h3>A dedicated artist</h3>
+            <p>Your house is looked after by the same Sundew artist every time: someone who knows your team, your suites, and your standards.</p>
           </li>
           <li>
             <h3>Discretion</h3>
@@ -246,11 +287,35 @@
       </div>
     </section>
 
+    <!-- ============ IN THE FIELD ============ -->
+    <section class="section field" id="field">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <p class="label">In the field</p>
+          <h2>Where you will already find us</h2>
+        </div>
+        <div class="field-grid" data-stagger>
+          <figure>
+            <img src="assets/photos/residence-desk.webp" alt="Sundew cards at the front desk of Hotel Swexan" width="1200" height="1280" loading="lazy">
+            <figcaption><span class="label">Dallas</span>At the front desk, Hotel Swexan</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/photos/activation-sign.webp" alt="A framed sign reading Tan Station, spray tanning sponsored by Sundew" width="730" height="881" loading="lazy">
+            <figcaption><span class="label">New York</span>The Tan Station, New York Swim Week</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/photos/activation-rack.webp" alt="Robes and Sundew slippers on a brass luggage cart, ready for guests" width="768" height="1024" loading="lazy">
+            <figcaption><span class="label">On site</span>Robes and slippers, ready for guests</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ GALLERY ============ -->
-    <section class="gallery" aria-label="Sundew clients">
-      <img src="assets/photos/bride-garden.webp" alt="A bride in a long veil walking through an ivy-covered stone doorway" width="1000" height="1244" loading="lazy">
-      <img src="assets/photos/portrait-detail.webp" alt="Close view of a bronzed neckline above a white strapless top" width="1000" height="1500" loading="lazy">
-      <img src="assets/photos/signature.webp" alt="A glowing Sundew client in a cream cowboy hat leaning over a pool table" width="1000" height="1500" loading="lazy">
+    <section class="gallery" aria-label="Sundew at work">
+      <img src="assets/photos/suite-setup.webp" alt="The Sundew tanning tent set up in a hotel suite, with a white robe hanging ready" width="768" height="1024" loading="lazy">
+      <img src="assets/photos/wedding-party.webp" alt="Two women in white robes laughing over a glass of wine before an event" width="1200" height="1440" loading="lazy">
+      <img src="assets/photos/airbrush.webp" alt="The Sundew airbrush, held above a marble surface" width="768" height="1024" loading="lazy">
     </section>
 
     <!-- ============ QUESTIONS FROM HOUSES ============ -->
@@ -359,6 +424,6 @@
   </footer>
 
   <script src="js/config.js"></script>
-  <script src="js/main.js?v=5"></script>
+  <script src="js/main.js?v=6"></script>
 </body>
 </html>
