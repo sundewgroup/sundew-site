@@ -165,7 +165,7 @@
 
   /* Pinned story: the photograph changes with the chapter in view */
   var chapters = document.querySelectorAll(".chapter");
-  var frames = document.querySelectorAll(".story-media img");
+  var frames = document.querySelectorAll(".story-media img, .story-media video");
   if (!chapters.length) return;
   if (!("IntersectionObserver" in window)) {
     each(chapters, function (c) { c.classList.add("is-active"); });
@@ -176,7 +176,12 @@
       if (!entry.isIntersecting) return;
       var active = Array.prototype.indexOf.call(chapters, entry.target);
       each(chapters, function (c, i) { c.classList.toggle("is-active", i === active); });
-      each(frames, function (f, i) { f.classList.toggle("is-active", i === active); });
+      each(frames, function (f, i) {
+        f.classList.toggle("is-active", i === active);
+        if (f.tagName !== "VIDEO") return;
+        if (i === active && !reduce) { var p = f.play(); if (p && p.catch) p.catch(function () {}); }
+        else f.pause();
+      });
     });
   }, { rootMargin: "-45% 0px -45% 0px" });
   each(chapters, function (c) { storyteller.observe(c); });
