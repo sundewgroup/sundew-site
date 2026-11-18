@@ -18,9 +18,11 @@
   /* ---- Mobile menu ---- */
   var toggle = document.getElementById("nav-toggle");
   var nav = document.getElementById("site-nav");
+  var header = document.querySelector(".site-header");
   if (toggle && nav) {
     var setOpen = function (open) {
       nav.classList.toggle("is-open", open);
+      if (header) header.classList.toggle("is-open", open);
       toggle.setAttribute("aria-expanded", String(open));
       toggle.textContent = open ? "Close" : "Menu";
     };
@@ -58,7 +60,7 @@
 
     var invalid = validate();
     if (invalid) {
-      setStatus("Please fill in your business name, your name, a valid email and your type of business.", "error");
+      setStatus("Please add your first name, last name, a valid email and a message.", "error");
       invalid.focus();
       return;
     }
@@ -68,7 +70,7 @@
     if (config.formEndpoint) {
       var button = document.getElementById("f-submit");
       button.disabled = true;
-      setStatus("Sending your request.", "");
+      setStatus("Sending your message.", "");
       fetch(config.formEndpoint, {
         method: "POST",
         headers: { Accept: "application/json" },
@@ -77,7 +79,7 @@
         .then(function (response) {
           if (!response.ok) throw new Error("Request failed");
           form.reset();
-          setStatus("Thanks. Your request is in and we will be in touch soon.", "ok");
+          setStatus("Thank you. Our concierge will respond within 24 hours.", "ok");
         })
         .catch(function () {
           setStatus("That did not send. Please try again, or email us at " + config.contactEmail + ".", "error");
@@ -88,14 +90,13 @@
       return;
     }
 
-    // No form service configured: open the visitor's email app with the request filled in.
-    var subject = "Partner quote request: " + data.get("business");
+    // No form service configured: open the visitor's email app with the message filled in.
+    var name = data.get("first") + " " + data.get("last");
+    var subject = "Sundew inquiry: " + data.get("interest") + " (" + name + ")";
     var body = [
-      "Business: " + data.get("business"),
-      "Name: " + data.get("name"),
+      "Name: " + name,
       "Email: " + data.get("email"),
-      "Phone: " + (data.get("phone") || "not given"),
-      "Type of business: " + data.get("type"),
+      "Inquiring about: " + data.get("interest"),
       "",
       data.get("message") || ""
     ].join("\n");
@@ -103,6 +104,6 @@
       "mailto:" + config.contactEmail +
       "?subject=" + encodeURIComponent(subject) +
       "&body=" + encodeURIComponent(body);
-    setStatus("Your email app should open with the request ready to send. If it does not, email " + config.contactEmail + ".", "ok");
+    setStatus("Your email app should open with the message ready to send. If it does not, email " + config.contactEmail + ".", "ok");
   });
 })();
