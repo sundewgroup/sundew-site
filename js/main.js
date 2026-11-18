@@ -96,6 +96,7 @@
     var body = [
       "Name: " + name,
       "Email: " + data.get("email"),
+      "House or company: " + (data.get("house") || "not given"),
       "Inquiring about: " + data.get("interest"),
       "",
       data.get("message") || ""
