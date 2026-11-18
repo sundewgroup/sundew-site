@@ -108,3 +108,77 @@
     setStatus("Your email app should open with the message ready to send. If it does not, email " + config.contactEmail + ".", "ok");
   });
 })();
+
+/* ---- Motion: header state, hero light, scroll reveals, pinned story ---- */
+(function () {
+  "use strict";
+
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var header = document.querySelector(".site-header--over");
+  var hero = document.querySelector(".hero");
+  var each = function (list, fn) { Array.prototype.forEach.call(list, fn); };
+
+  /* Header turns solid once the page scrolls; the hero photo drifts slowly */
+  var ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function () {
+      var y = window.scrollY || 0;
+      if (header) header.classList.toggle("is-scrolled", y > 60);
+      if (hero && !reduce && y < window.innerHeight * 1.2) hero.style.setProperty("--scroll", String(y));
+      ticking = false;
+    });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* A warm light follows the cursor across the hero */
+  if (hero && !reduce && window.matchMedia("(pointer: fine)").matches) {
+    hero.addEventListener("pointermove", function (event) {
+      var box = hero.getBoundingClientRect();
+      hero.style.setProperty("--mx", (event.clientX - box.left) + "px");
+      hero.style.setProperty("--my", (event.clientY - box.top) + "px");
+    });
+  }
+
+  /* Reveal elements as they enter the screen */
+  each(document.querySelectorAll("[data-stagger]"), function (group) {
+    each(group.children, function (child, index) {
+      child.setAttribute("data-reveal", "");
+      child.style.setProperty("--d", (index * 0.09) + "s");
+    });
+  });
+  var items = document.querySelectorAll("[data-reveal]");
+  if (reduce || !("IntersectionObserver" in window)) {
+    each(items, function (el) { el.classList.add("is-in"); });
+  } else {
+    var revealer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-in");
+        revealer.unobserve(entry.target);
+      });
+    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.06 });
+    each(items, function (el) { revealer.observe(el); });
+  }
+
+  /* Pinned story: the photograph changes with the chapter in view */
+  var chapters = document.querySelectorAll(".chapter");
+  var frames = document.querySelectorAll(".story-media img");
+  if (!chapters.length) return;
+  if (!("IntersectionObserver" in window)) {
+    each(chapters, function (c) { c.classList.add("is-active"); });
+    return;
+  }
+  var storyteller = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var active = Array.prototype.indexOf.call(chapters, entry.target);
+      each(chapters, function (c, i) { c.classList.toggle("is-active", i === active); });
+      each(frames, function (f, i) { f.classList.toggle("is-active", i === active); });
+    });
+  }, { rootMargin: "-45% 0px -45% 0px" });
+  each(chapters, function (c) { storyteller.observe(c); });
+  chapters[0].classList.add("is-active");
+})();
