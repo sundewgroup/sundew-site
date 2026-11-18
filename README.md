@@ -1,6 +1,6 @@
 # Sundew website
 
-The marketing site for Sundew, a mobile spray tan business that partners with other businesses. Sundew is a brand of Sundew Group LLC. Live address: https://www.sundewgroup.com
+The website for Sundew, a private concierge spray tanning company in Dallas. Sundew is a brand of Sundew Group LLC. Live address: https://www.sundewgroup.com
 
 Plain HTML, CSS and JavaScript. There is no build step and nothing to install.
 
@@ -8,7 +8,9 @@ Plain HTML, CSS and JavaScript. There is no build step and nothing to install.
 
 | File | What it controls |
 | --- | --- |
-| `index.html` | All page content and copy, one commented block per section |
+| `index.html` | The home page: all content and copy, one commented block per section |
+| `terms.html`, `waiver.html` | Terms & Conditions and Waiver of Liability pages |
+| `assets/photos/` | Photography used on the site |
 | `css/styles.css` | The look. Colors, fonts and spacing are tokens in `:root` at the top |
 | `js/config.js` | Contact email and optional form service URL |
 | `js/main.js` | Mobile menu and contact form behavior |
@@ -19,7 +21,7 @@ Plain HTML, CSS and JavaScript. There is no build step and nothing to install.
 
 ## Before launch
 
-Search `index.html` for `[` to find every placeholder (service area, rates, phone, insurance details, testimonial) and replace each with your real information. Set your real inbox in `js/config.js`.
+Set your real inbox in `js/config.js`. The "For partners" section in `index.html` is new copy; edit or remove it to suit.
 
 ## Preview on your computer
 
