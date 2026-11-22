@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sundew | The sunless atelier for Dallas's finest houses</title>
+  <title>Sundew | Private airbrush tanning for Dallas hotels, residences and celebrations</title>
   <meta name="description" content="Sundew is a private sunless tanning atelier in Dallas, appointed by hotels, residences, planners, and brands to care for their guests in suite. By appointment.">
   <link rel="canonical" href="https://www.sundewgroup.com/">
 
@@ -17,11 +17,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=10">
+  <link rel="preload" as="image" href="assets/photos/hero.webp" fetchpriority="high">
+  <link rel="stylesheet" href="css/styles.css?v=11">
 </head>
 <body class="home">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="curtain" aria-hidden="true"><span class="wordmark">Sundew</span></div>
 
   <!-- ============ HEADER ============ -->
   <header class="site-header site-header--over">
@@ -43,9 +43,9 @@
       <img class="hero-img" src="assets/photos/hero.webp" alt="Sun-kissed shoulders and collarbone in warm afternoon light" width="2500" height="1666" fetchpriority="high">
       <div class="hero-glow" aria-hidden="true"></div>
       <div class="hero-copy">
-        <p class="label">Dallas &middot; By appointment to the house</p>
+        <p class="label">Private airbrush tanning &middot; In suite &middot; Dallas</p>
         <h1>Because luxury should <em>never fade.</em></h1>
-        <p class="hero-sub">Sundew is the private sunless atelier appointed by Dallas hotels, residences, and houses of celebration to care for their guests, in suite.</p>
+        <p class="hero-sub">A custom airbrush tan, brought to your guest's suite. Sundew is the sunless service that Dallas hotels, residences, planners, and brands offer as their own.</p>
         <div class="hero-actions">
           <a class="btn btn--light" href="#inquire">Begin a partnership</a>
           <a class="text-link" href="private.html">Private clients</a>
@@ -60,20 +60,13 @@
       </div>
     </section>
 
-    <!-- ============ IN RESIDENCE ============ -->
-    <section class="section feature feature--night" id="residence">
-      <div class="wrap intro-grid">
-        <figure class="intro-figure" data-reveal>
-          <img src="assets/photos/residence-pool.webp" alt="The rooftop pool at Hotel Swexan under a bright Dallas sky" width="768" height="1024" loading="lazy">
-        </figure>
-        <div class="intro-copy" data-stagger>
-          <p class="label">In residence at</p>
-          <h2>Hotel Swexan, Dallas</h2>
-          <p class="statement">Tanning, on call.</p>
-          <p>Sundew is the private airbrush tanning service for guests of Hotel Swexan: a custom tan delivered to the suite, at a preferred guest rate.</p>
-          <p>You forgot your tan. We brought it.</p>
-        </div>
-      </div>
+    <!-- ============ PROOF ============ -->
+    <section class="proof" aria-label="Where Sundew works">
+      <ul class="proof-list">
+        <li><span>In residence</span>Hotel Swexan, Dallas</li>
+        <li><span>On location</span>The Tan Station, New York Swim Week</li>
+        <li><span>By appointment</span>Highland Park &middot; Turtle Creek</li>
+      </ul>
     </section>
 
     <!-- ============ THE IDEA ============ -->
@@ -81,7 +74,6 @@
       <div class="wrap" data-stagger>
         <p class="label">The idea</p>
         <p class="statement">A great house already keeps a florist, a tailor, and a car. Sundew is its sunless artist.</p>
-        <p>Your guests arrive for the wedding weekend, the gala, the photograph that will be kept. They expect to look their best, and they expect not to leave the suite to do it.</p>
         <p>Sundew comes to them: a custom airbrush tan, applied privately in the suite, with everything brought in and nothing left behind. The guest remembers the glow. The house is remembered for arranging it.</p>
       </div>
     </section>
@@ -90,9 +82,9 @@
     <section class="story" aria-label="One guest, one evening">
       <div class="story-grid">
         <div class="story-media" aria-hidden="true">
-          <img class="is-active" src="assets/photos/story-request.webp" alt="" width="768" height="1024" loading="lazy">
-          <video src="assets/photos/arrival.mp4" poster="assets/photos/arrival-poster.jpg" muted loop playsinline preload="none"></video>
+          <img class="is-active" src="assets/photos/bridal.webp?v=2" alt="" width="1206" height="1493" loading="lazy">
           <video src="assets/photos/tan.mp4" poster="assets/photos/tan-poster.jpg" muted loop playsinline preload="none"></video>
+          <img src="assets/photos/portrait-detail.webp" alt="" width="1000" height="1500" loading="lazy">
           <img src="assets/photos/bride-garden.webp" alt="" width="1000" height="1244" loading="lazy">
         </div>
         <div class="story-chapters">
@@ -125,64 +117,78 @@
     </section>
 
     <!-- ============ FOR HOUSES ============ -->
-    <section class="section services" id="houses">
+    <section class="section programs" id="houses">
       <div class="wrap">
         <div class="section-head" data-reveal>
           <p class="label">For houses</p>
           <h2>Three ways to appoint Sundew</h2>
         </div>
+        <ol class="program-list" data-stagger>
+          <li class="program">
+            <span class="program-no" aria-hidden="true">01</span>
+            <div class="program-head">
+              <p class="label">Hotels &amp; private residences</p>
+              <h3>Sundew in Residence</h3>
+            </div>
+            <div class="program-body">
+              <p>Sundew becomes your property's named sunless service, offered to guests and residents as your own.</p>
+              <ul>
+                <li>Arranged through your concierge or spa desk</li>
+                <li>Performed in suite, by private appointment</li>
+                <li>Offered at a house rate or as a hosted amenity</li>
+              </ul>
+            </div>
+            <a class="program-link" href="#inquire">Inquire<span class="visually-hidden"> about Sundew in Residence</span></a>
+          </li>
+          <li class="program">
+            <span class="program-no" aria-hidden="true">02</span>
+            <div class="program-head">
+              <p class="label">Planners, ateliers &amp; venues</p>
+              <h3>The Wedding Weekend</h3>
+            </div>
+            <div class="program-body">
+              <p>The Bridal Edit, offered to your brides as part of your service and designed for their most photographed day.</p>
+              <ul>
+                <li>A trial tan at least three weeks before</li>
+                <li>The wedding tan and touch-ups, in the bridal suite</li>
+                <li>The wedding party, on request</li>
+              </ul>
+            </div>
+            <a class="program-link" href="#inquire">Inquire<span class="visually-hidden"> about The Wedding Weekend</span></a>
+          </li>
+          <li class="program">
+            <span class="program-no" aria-hidden="true">03</span>
+            <div class="program-head">
+              <p class="label">Brands, clubs &amp; private events</p>
+              <h3>The Private Suite</h3>
+            </div>
+            <div class="program-body">
+              <p>A Sundew suite for the people you most want to look after: your best clients, your members, your guests of honor.</p>
+              <ul>
+                <li>Client appreciation days and trunk shows</li>
+                <li>Galas, retreats, and editorial shoots</li>
+                <li>Recently: the Tan Station at New York Swim Week</li>
+              </ul>
+            </div>
+            <a class="program-link" href="#inquire">Inquire<span class="visually-hidden"> about The Private Suite</span></a>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-        <article class="service">
-          <figure class="service-figure" data-reveal>
-            <img src="assets/photos/program-residence.webp" alt="Sundew cards on a marble table at Hotel Swexan, reading: You forgot your tan. We brought it." width="1125" height="1500" loading="lazy">
-          </figure>
-          <div class="service-copy" data-stagger>
-            <p class="label">Hotels &amp; private residences</p>
-            <h3>Sundew in Residence</h3>
-            <p>Sundew becomes your property's named sunless service, offered to guests and residents as your own. Now in residence at Hotel Swexan.</p>
-            <ul class="includes">
-              <li>Arranged through your concierge or spa desk</li>
-              <li>Performed in suite, by private appointment</li>
-              <li>Offered at a house rate or as a hosted amenity</li>
-            </ul>
-            <a class="btn" href="#inquire">Inquire</a>
-          </div>
-        </article>
-
-        <article class="service service--flip">
-          <figure class="service-figure" data-reveal>
-            <img src="assets/photos/bridal.webp?v=2" alt="A bride in a silk gown and veil holding a white bouquet" width="1206" height="1493" loading="lazy">
-          </figure>
-          <div class="service-copy" data-stagger>
-            <p class="label">Planners, ateliers &amp; venues</p>
-            <h3>The Wedding Weekend</h3>
-            <p>The Bridal Edit, offered to your brides as part of your service and designed for their most photographed day.</p>
-            <ul class="includes">
-              <li>A trial tan at least three weeks before</li>
-              <li>The wedding tan and touch-ups, in the bridal suite</li>
-              <li>The wedding party, on request</li>
-            </ul>
-            <a class="btn" href="#inquire">Inquire</a>
-          </div>
-        </article>
-
-        <article class="service">
-          <figure class="service-figure" data-reveal>
-            <img src="assets/photos/program-suite.webp" alt="White slippers embroidered with the Sundew name, tied with green ribbon" width="1125" height="1500" loading="lazy">
-          </figure>
-          <div class="service-copy" data-stagger>
-            <p class="label">Brands, clubs &amp; private events</p>
-            <h3>The Private Suite</h3>
-            <p>A Sundew suite for the people you most want to look after: your best clients, your members, your guests of honor.</p>
-            <ul class="includes">
-              <li>Client appreciation days and trunk shows</li>
-              <li>Galas, retreats, and editorial shoots</li>
-              <li>Recently: the Tan Station at New York Swim Week</li>
-              <li>Hosted by the house, by invitation</li>
-            </ul>
-            <a class="btn" href="#inquire">Inquire</a>
-          </div>
-        </article>
+    <!-- ============ IN RESIDENCE ============ -->
+    <section class="section feature feature--night" id="residence">
+      <div class="wrap intro-grid">
+        <figure class="intro-figure" data-reveal>
+          <img src="assets/photos/residence-pool.webp" alt="The rooftop pool at Hotel Swexan under a bright Dallas sky" width="768" height="1024" loading="lazy">
+        </figure>
+        <div class="intro-copy" data-stagger>
+          <p class="label">Now in residence</p>
+          <h2>Hotel Swexan, Dallas</h2>
+          <p class="statement">Tanning, on call.</p>
+          <p>Sundew is the private airbrush tanning service for guests of Hotel Swexan: a custom tan delivered to the suite, at a preferred guest rate.</p>
+          <p>You forgot your tan. We brought it.</p>
+        </div>
       </div>
     </section>
 
@@ -287,37 +293,6 @@
       </div>
     </section>
 
-    <!-- ============ IN THE FIELD ============ -->
-    <section class="section field" id="field">
-      <div class="wrap">
-        <div class="section-head" data-reveal>
-          <p class="label">In the field</p>
-          <h2>Where you will already find us</h2>
-        </div>
-        <div class="field-grid" data-stagger>
-          <figure>
-            <img src="assets/photos/residence-desk.webp" alt="Sundew cards at the front desk of Hotel Swexan" width="1200" height="1280" loading="lazy">
-            <figcaption><span class="label">Dallas</span>At the front desk, Hotel Swexan</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/photos/activation-sign.webp" alt="A framed sign reading Tan Station, spray tanning sponsored by Sundew" width="730" height="881" loading="lazy">
-            <figcaption><span class="label">New York</span>The Tan Station, New York Swim Week</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/photos/activation-rack.webp" alt="Robes and Sundew slippers on a brass luggage cart, ready for guests" width="768" height="1024" loading="lazy">
-            <figcaption><span class="label">On site</span>Robes and slippers, ready for guests</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ GALLERY ============ -->
-    <section class="gallery" aria-label="Sundew at work">
-      <img src="assets/photos/suite-setup.webp" alt="The Sundew tanning tent set up in a hotel suite, with a white robe hanging ready" width="768" height="1024" loading="lazy">
-      <img src="assets/photos/wedding-party.webp" alt="Two women in white robes laughing over a glass of wine before an event" width="1200" height="1440" loading="lazy">
-      <img src="assets/photos/airbrush.webp" alt="The Sundew airbrush, held above a marble surface" width="768" height="1024" loading="lazy">
-    </section>
-
     <!-- ============ QUESTIONS FROM HOUSES ============ -->
     <section class="section faqs" id="faq">
       <div class="wrap faq-layout">
@@ -360,7 +335,7 @@
         <div class="contact-copy" data-stagger>
           <p class="label">Inquire</p>
           <h2>Bring Sundew into your house.</h2>
-          <p>For partnership inquiries, private client access, or press opportunities, please complete the form. Our concierge will respond within 24 hours.</p>
+          <p>For partnership inquiries, private client access, or press opportunities, leave three details and we will reply within 24 hours.</p>
           <dl class="contact-details">
             <div><dt>Email</dt><dd><a id="contact-email-link" href="mailto:hello@sundewgroup.com">hello@sundewgroup.com</a></dd></div>
             <div><dt>Text</dt><dd><a href="sms:+19258769255">(925) 876-9255</a></dd></div>
@@ -369,15 +344,9 @@
         </div>
 
         <form class="contact-form" id="contact-form" novalidate data-reveal>
-          <div class="field-row">
-            <div class="field">
-              <label for="f-first">First name</label>
-              <input id="f-first" name="first" type="text" autocomplete="given-name" required>
-            </div>
-            <div class="field">
-              <label for="f-last">Last name</label>
-              <input id="f-last" name="last" type="text" autocomplete="family-name" required>
-            </div>
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
           </div>
           <div class="field">
             <label for="f-house">House or company</label>
@@ -398,8 +367,8 @@
             </select>
           </div>
           <div class="field">
-            <label for="f-message">Message</label>
-            <textarea id="f-message" name="message" rows="5" required></textarea>
+            <label for="f-message">Anything we should know <span class="optional">(optional)</span></label>
+            <textarea id="f-message" name="message" rows="3"></textarea>
           </div>
           <button class="btn btn--light" type="submit" id="f-submit">Send</button>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
@@ -424,6 +393,6 @@
   </footer>
 
   <script src="js/config.js"></script>
-  <script src="js/main.js?v=6"></script>
+  <script src="js/main.js?v=7"></script>
 </body>
 </html>
