@@ -445,3 +445,4 @@ html { scroll-padding-top: 5rem; }
 /* ---------- Refinements ---------- */
 .intro-figure img { filter: saturate(0.9) contrast(1.03); }
 .field .optional { text-transform: none; letter-spacing: 0.02em; font-weight: 400; opacity: 0.75; }
+.contact-form > .field { flex: 0 0 auto; }
