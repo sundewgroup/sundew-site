@@ -150,3 +150,54 @@
     say("Your email app should now be open with the request ready to send.");
   });
 })();
+
+/* v2: hero montage, cursor glow, lookbook loop, tan-date planner */
+(function () {
+  "use strict";
+  var doc = document, reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var fig = doc.querySelector(".hero-photo[data-slides]"), hero = doc.querySelector(".hero");
+  if (fig) {
+    var imgs = [fig.querySelector("img")]; imgs[0].classList.add("is-on");
+    fig.getAttribute("data-slides").split(",").forEach(function (src) {
+      var im = new Image(); im.alt = "";
+      im.onload = function () { fig.appendChild(im); imgs.push(im); fig.classList.add("has-slides"); };
+      im.src = src;
+    });
+    if (!reduce) {
+      var k = 0;
+      window.setInterval(function () {
+        if (imgs.length < 2) return;
+        imgs[k].classList.remove("is-on"); k = (k + 1) % imgs.length; imgs[k].classList.add("is-on");
+      }, 5200);
+    }
+  }
+  if (hero && !reduce) {
+    hero.addEventListener("pointermove", function (e) {
+      var r = hero.getBoundingClientRect();
+      hero.style.setProperty("--mx", ((e.clientX - r.left) / r.width * 100).toFixed(1) + "%");
+      hero.style.setProperty("--my", ((e.clientY - r.top) / r.height * 100).toFixed(1) + "%");
+    });
+  }
+  var track = doc.getElementById("look-track");
+  if (track && !reduce) {
+    Array.prototype.slice.call(track.children).forEach(function (f) { var c = f.cloneNode(true); c.setAttribute("aria-hidden", "true"); track.appendChild(c); });
+  }
+  var date = doc.getElementById("plan-date"), out = doc.getElementById("plan-out"), cta = doc.getElementById("plan-cta");
+  if (date && out) {
+    var fmt = function (d) { return d.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" }); };
+    date.min = new Date().toISOString().slice(0, 10);
+    date.addEventListener("change", function () {
+      if (!date.value) return;
+      var p = date.value.split("-"), ev = new Date(+p[0], +p[1] - 1, +p[2]);
+      var a = new Date(ev), b = new Date(ev); a.setDate(ev.getDate() - 2); b.setDate(ev.getDate() - 1);
+      out.innerHTML = "Book her tan for <strong>" + fmt(a) + "</strong> or <strong>" + fmt(b) + "</strong>.";
+      if (cta) {
+        cta.hidden = false;
+        cta.onclick = function () {
+          var m = doc.querySelector("#contact-form textarea");
+          if (m) m.value = "Event on " + fmt(ev) + ". Tan on " + fmt(a) + " or " + fmt(b) + ".";
+        };
+      }
+    });
+  }
+})();
