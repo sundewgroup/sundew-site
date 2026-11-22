@@ -14,9 +14,9 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/photos/hero.webp" fetchpriority="high">
-  <link rel="stylesheet" href="css/home.css?v=1">
+  <link rel="stylesheet" href="css/home.css?v=2">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -36,7 +36,8 @@
   <main id="main">
     <!-- 1. HERO -->
     <section class="hero" data-tone="dark">
-      <figure class="hero-photo" aria-hidden="true"><img src="assets/photos/hero.webp" alt="" width="2500" height="1666" fetchpriority="high"></figure>
+      <figure class="hero-photo" aria-hidden="true" data-slides="assets/photos/hero-2.webp,assets/photos/hero-3.webp"><img src="assets/photos/hero.webp" alt="" width="2500" height="1666" fetchpriority="high"></figure>
+      <div class="hero-glow" aria-hidden="true"></div>
       <div class="hero-inner">
         <p class="eyebrow">A first for Dallas &nbsp;&middot;&nbsp; Private airbrush tanning for houses</p>
         <h1 class="display" data-split>Tanning,<br><em>on call.</em></h1>
@@ -82,6 +83,21 @@
       </div>
     </section>
 
+    <!-- LOOKBOOK -->
+    <section class="look" data-tone="light" aria-label="Sundew in the field">
+      <p class="look-head"><span>Dallas</span><span>New York Fashion Week</span><span>New York Swim Week</span></p>
+      <div class="look-track" id="look-track">
+        <figure><img src="assets/photos/look-robe.webp" alt="A guest in a white robe, shoulders bare, after her tan" width="1100" height="1400" loading="lazy"><figcaption>The morning of</figcaption></figure>
+        <figure><img src="assets/photos/look-nyc.webp" alt="Crossing a cobbled street in Tribeca during New York Fashion Week" width="1100" height="1400" loading="lazy"><figcaption>New York Fashion Week</figcaption></figure>
+        <figure><img src="assets/photos/look-station.webp" alt="A guest in a pink robe beside the Tan Station sign" width="1100" height="1400" loading="lazy"><figcaption>The Tan Station, New York Swim Week</figcaption></figure>
+        <figure><img src="assets/photos/look-slippers.webp" alt="White slippers embroidered with the Sundew name" width="1100" height="1400" loading="lazy"><figcaption>Slippers for every guest</figcaption></figure>
+        <figure><img src="assets/photos/look-color.webp" alt="A bottle of tanning solution on marble beside the airbrush" width="1100" height="1400" loading="lazy"><figcaption>Color, mixed for one guest</figcaption></figure>
+        <figure><img src="assets/photos/look-sign.webp" alt="A framed sign reading Tan Station, sponsored by Sundew" width="1100" height="1400" loading="lazy"><figcaption>On location</figcaption></figure>
+        <figure><img src="assets/photos/look-tribeca.webp" alt="Outside a showroom in Tribeca" width="1100" height="1400" loading="lazy"><figcaption>Between shows</figcaption></figure>
+        <figure><img src="assets/photos/look-morning.webp" alt="A guest looking over her shoulder in a white robe" width="1100" height="1400" loading="lazy"><figcaption>In suite</figcaption></figure>
+      </div>
+    </section>
+
     <!-- 4. HOW IT RUNS (horizontal) -->
     <section class="how" id="how" data-tone="light" aria-label="How it runs on your property">
       <div class="how-pin">
@@ -112,6 +128,23 @@
           </article>
         </div>
         <div class="how-bar" aria-hidden="true"><span id="how-bar"></span></div>
+      </div>
+    </section>
+
+    <!-- PLANNER -->
+    <section class="plan" id="plan" data-tone="light">
+      <div class="wrap plan-grid">
+        <div>
+          <p class="eyebrow">Try it</p>
+          <h2 class="display display-md">When should <em>she tan?</em></h2>
+          <p class="plan-lede">The question your concierge will be asked most. Pick the date of the event.</p>
+        </div>
+        <div class="plan-tool">
+          <label for="plan-date">The event is on</label>
+          <input id="plan-date" type="date">
+          <p class="plan-out" id="plan-out" aria-live="polite">Choose a date and we will tell you the day to book.</p>
+          <a class="btn btn-ink" href="#pilot" id="plan-cta" hidden>Ask about this date</a>
+        </div>
       </div>
     </section>
 
@@ -251,6 +284,6 @@
   </footer>
 
   <script src="js/config.js"></script>
-  <script src="js/home.js?v=1"></script>
+  <script src="js/home.js?v=2"></script>
 </body>
 </html>
