@@ -60,7 +60,7 @@
 
     var invalid = validate();
     if (invalid) {
-      setStatus("Please add your first name, last name, a valid email and a message.", "error");
+      setStatus("Please add your name and a valid email.", "error");
       invalid.focus();
       return;
     }
@@ -91,7 +91,7 @@
     }
 
     // No form service configured: open the visitor's email app with the message filled in.
-    var name = data.get("first") + " " + data.get("last");
+    var name = data.get("name");
     var subject = "Sundew inquiry: " + data.get("interest") + " (" + name + ")";
     var body = [
       "Name: " + name,
